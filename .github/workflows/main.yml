@@ -13,6 +13,8 @@ jobs:
           node-version: '14.x'
       - name: Use Jest
         run: npm install ts-jest
+      - name: Use typescript
+        run: npm install typescript
       - name: Install dependencies
         run: npm install
       - name: Run API tests

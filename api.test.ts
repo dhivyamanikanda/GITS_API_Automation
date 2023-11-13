@@ -2,6 +2,10 @@ import axios from 'axios';
 
 describe('GET API tests', () => {
   it('When gist_id found', async () => {
+    const myVariable = process.env.TOKEN;
+    console.log("myVariable");
+    console.log(myVariable);
+
     const response = await axios.get('https://api.github.com/gists/7376e2686a8e737ecf9e9dca8a9bccae');
     expect(response.status).toBe(200);
   });

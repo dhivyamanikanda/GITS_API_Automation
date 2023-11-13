@@ -13,6 +13,8 @@ jobs:
           node-version: '14.x'
       - name: Use Jest
         run: npm install ts-jest
+      - name: Use types/jest
+        run: npm install @types/jest
       - name: Use typescript
         run: npm install typescript
       - name: Use axios

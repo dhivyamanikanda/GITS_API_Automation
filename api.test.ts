@@ -17,8 +17,6 @@ describe('GET API tests', () => {
 
 describe('POST API tests', () => {
   const token = process.env.TOKEN;
-    console.log("token");
-    console.log(token);
 
   it('Should create a new gist', async () => {
     const newGist = {
@@ -82,6 +80,7 @@ describe('POST API tests', () => {
 });
 
 describe('PATCH API tests', () => {
+  const token = process.env.TOKEN;
   it('Should update existing gist', async () => {
     const newGist = {
       description: 'Example of a gist',

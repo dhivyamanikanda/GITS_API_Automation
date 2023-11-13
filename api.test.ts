@@ -2,10 +2,6 @@ import axios from 'axios';
 
 describe('GET API tests', () => {
   it('When gist_id found', async () => {
-    const myVariable = process.env.TOKEN;
-    console.log("myVariable");
-    console.log(myVariable);
-
     const response = await axios.get('https://api.github.com/gists/7376e2686a8e737ecf9e9dca8a9bccae');
     expect(response.status).toBe(200);
   });
@@ -19,7 +15,11 @@ describe('GET API tests', () => {
   });
 });
 
-/*describe('POST API tests', () => {
+describe('POST API tests', () => {
+  const token = process.env.TOKEN;
+    console.log("token");
+    console.log(token);
+
   it('Should create a new gist', async () => {
     const newGist = {
       description: 'Example of a gist',
@@ -32,7 +32,7 @@ describe('GET API tests', () => {
     };
 
     const headers = {
-      Authorization: 'Bearer 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',
+      'Authorization': `Bearer ${token}`,
       'Accept': 'application/vnd.github+json'
     };
 
@@ -67,7 +67,7 @@ describe('GET API tests', () => {
     };
 
     const headers = {
-      Authorization: 'Bearer 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',
+      'Authorization': `Bearer ${token}`,
       'Accept': 'application/vnd.github+json'
     };
 
@@ -94,7 +94,7 @@ describe('PATCH API tests', () => {
     };
 
     const headers = {
-      Authorization: 'Bearer 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',
+      'Authorization': `Bearer ${token}`,
       'Accept': 'application/vnd.github+json'
     };
 
@@ -117,7 +117,7 @@ describe('PATCH API tests', () => {
     };
 
     const headers = {
-      Authorization: 'Bearer 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',
+      'Authorization': `Bearer ${token}`,
       'Accept': 'application/vnd.github+json'
     };
 
@@ -135,7 +135,7 @@ describe('PATCH API tests', () => {
     };
 
     const headers = {
-      Authorization: 'Bearer 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',
+      'Authorization': `Bearer ${token}`,
       'Accept': 'application/vnd.github+json'
     };
 
@@ -147,4 +147,4 @@ describe('PATCH API tests', () => {
       expect(error.response.status).toBe(422);
       }
     });
-  });*/
+  });

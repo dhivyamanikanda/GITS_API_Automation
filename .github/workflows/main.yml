@@ -15,6 +15,8 @@ jobs:
         run: npm install ts-jest
       - name: Use typescript
         run: npm install typescript
+      - name: Use axios
+        run: npm install axios
       - name: Install dependencies
         run: npm install
       - name: Run API tests

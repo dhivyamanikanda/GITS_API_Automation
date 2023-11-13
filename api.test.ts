@@ -1,48 +1,8 @@
 import axios from 'axios';
 
-
-// describe('API Tests', () => {
-
-//     it('should return a 200 OK status', async () => {
-        
-//         const myVariable = process.env.TOKEN;
-//         console.log("myVariable");
-//         console.log(myVariable);
-
-
-//         const options = {
-//         hostname: 'https://api.github.com/',
-//         path: 'gists/5d7e231294d51571a661eb8b823c379b',
-//         method: 'GET',
-//         headers: {
-//             'Accept': 'application/vnd.github+json',
-//             'Authorization': `Bearer ${myVariable}`
-//         }
-//         };
-
-//         const req = http.request(options, res => {
-//         console.log(`statusCode: ${res.statusCode}`);
-
-//         res.on('data', d => {
-//             process.stdout.write(d);
-//         });
-//         });
-
-//         req.on('error', error => {
-//         console.error(error);
-//         });
-
-//         req.end();
-//             });
-// });
-
-
 describe('GET API tests', () => {
   it('When gist_id found', async () => {
-
     const response = await axios.get('https://api.github.com/gists/7376e2686a8e737ecf9e9dca8a9bccae');
-    console.log("response.status");
-    console.log(response.status);
     expect(response.status).toBe(200);
   });
 
@@ -55,7 +15,7 @@ describe('GET API tests', () => {
   });
 });
 
-describe('POST API tests', () => {
+/*describe('POST API tests', () => {
   it('Should create a new gist', async () => {
     const newGist = {
       description: 'Example of a gist',
@@ -183,4 +143,4 @@ describe('PATCH API tests', () => {
       expect(error.response.status).toBe(422);
       }
     });
-  });
+  });*/

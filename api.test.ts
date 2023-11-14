@@ -66,6 +66,9 @@ describe('POST API tests', () => {
 
     const response_get = await axios.get(`https://api.github.com/gists/public`);
     
+    console.log("response_get.data.id");
+    console.log("response_get.data.id");
+    
     expect(response_get.status).toBe(404);
   });
 

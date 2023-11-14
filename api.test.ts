@@ -41,6 +41,29 @@ describe('POST API tests', () => {
     expect(response.status).toBe(201);
   });
 
+  it('Should create private new gist', async () => {
+    const newGist = {
+      description: 'Example of a gist',
+      public: 'false',
+      files: {
+        "README.md": {
+          "content": "aaaaa"
+        }
+      }
+    };
+
+    const headers = {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github+json'
+    };
+
+    const response = await axios.post('https://api.github.com/gists', newGist, {
+      headers: headers
+    });
+    
+    expect(response.status).toBe(201);
+  });
+
   it('Unauthorized while create a new gist', async () => {
     const newGist = {
       description: 'Example of a gist',

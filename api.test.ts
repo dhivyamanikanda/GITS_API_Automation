@@ -57,14 +57,14 @@ describe('POST API tests', () => {
       'Accept': 'application/vnd.github+json'
     };
 
-    const response = await axios.post('https://api.github.com/gists', newGist, {
+    const response_post = await axios.post('https://api.github.com/gists', newGist, {
       headers: headers
     });
 
-    console.log("response.data.id");
-    console.log(response.data.id);
+    console.log("response_post.data.id");
+    console.log(response_post.data.id);
 
-    const response = await axios.get(`https://api.github.com/gists/public`);
+    const response_get = await axios.get(`https://api.github.com/gists/public`);
     
     expect(response.status).toBe(404);
   });

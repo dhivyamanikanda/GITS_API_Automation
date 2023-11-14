@@ -60,8 +60,13 @@ describe('POST API tests', () => {
     const response = await axios.post('https://api.github.com/gists', newGist, {
       headers: headers
     });
+
+    console.log("response.data.id");
+    console.log(response.data.id);
+
+    const response = await axios.get(`https://api.github.com/gists/public`);
     
-    expect(response.status).toBe(201);
+    expect(response.status).toBe(404);
   });
 
   it('Unauthorized while create a new gist', async () => {
